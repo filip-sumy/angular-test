@@ -1,0 +1,15 @@
+<div class="container">
+  <div class="card" *ngFor="let user of users">
+    <img [src]="user.picture.large" alt="Profile Image" />
+    <h3>{{ user.name.first }} {{ user.name.last }}</h3>
+    <p>Gender: {{ user.gender }}</p>
+    <p>Email: {{ user.email }}</p>
+    <p>Location: {{ user.location.city }}, {{ user.location.country }}</p>
+
+    <div *ngIf="user.weather">
+      <h4>Weather</h4>
+      <p>Temp: {{ user.weather.temperature }}°C</p>
+      <p>Wind: {{ user.weather.windspeed }} km/h</p>
+    </div>
+  </div>
+</div>
